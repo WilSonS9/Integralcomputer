@@ -1,2 +1,2 @@
 # Integralcomputer
-Repo for my estimator of definite integrals and differentials
+Repo for my approximators of definite integrals and differentials
