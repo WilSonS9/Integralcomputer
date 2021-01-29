@@ -5,12 +5,15 @@ from matplotlib.offsetbox import AnchoredText
 import matplotlib.markers as markers
 import numpy as np
 
+# Define any function here
 def f(x):
     return x**2
 
+# Approximates the differential of f at the point a by calculating (f(a + h) - f(a))/h for the given values of a and h
+
 def derivera (a, h):
     slope = ((f(a + h) - f(a))/h)
-    
+    # The last value may have to be changed depending on the value of h
     t = np.arange(a - 2*h, a+2*h, 0.00001)
     t2 = np.arange(a, a+h, h)
     s = f(t)
@@ -25,12 +28,10 @@ def derivera (a, h):
     ax.grid(alpha=0.3)
     
 
-    # if area<0:
-    #     area *= -1
     texts = AnchoredText('Slope = ' + str(round(slope, 4)), loc=1)
     ax.add_artist(texts)
-  #  ax.text(0, 0, 'Area = ' + str(round(area, 4)), horizontalalignment='left', verticalalignment='top')
     fig.savefig("slope.png")
     plt.show()
     return slope
+# Enter your prefered values for a and h below
 derivera(2, 0.001)
